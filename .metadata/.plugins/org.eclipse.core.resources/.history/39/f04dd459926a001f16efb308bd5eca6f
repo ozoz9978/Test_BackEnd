@@ -1,0 +1,11 @@
+package com.kdigital.ajax.service;
+
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class GuestbookService {
+	final GuestbookRepository repository;
+}

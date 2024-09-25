@@ -1,0 +1,34 @@
+package com.kdigital.ajax.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.kdigital.ajax.dto.GuestbookDTO;
+import com.kdigital.ajax.entity.GuestbookEntity;
+import com.kdigital.ajax.repository.GuestbookRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class GuestbookService {
+   
+   final GuestbookRepository repository;
+
+   /**
+    * 방명록의 모든 글을 조회
+    * @return
+    */
+   public List<GuestbookDTO> selectAll() {
+	   List<GuestbookDTO> list = new ArrayList<>();
+	   List<GuestbookEntity> guestEntity = repository.findAll();
+
+	   guestEntity.forEach((entity) -> {
+	       System.out.println("Entity: " + entity);
+	       list.add(GuestbookDTO.toDTO(entity));
+	   });
+
+	   return list;
+	}

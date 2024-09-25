@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>간단한 계산기</title>
+</head>
+<body>
+	<h2>덧셈 계산기</h2>
+
+	<form action="calc" method="POST">
+		<label for="x">x = </label>
+		<input type="text" name="x" id="x"  th:value="${x}" placeholder="정수 입력">
+		
+		<label for="y">y = </label>
+		<input type="text" name="y" id="y"  th:value="${y}" placeholder="정수 입력">
+		
+		<input type="submit" value="=">
+		<input type="button" id="clear" value="C">
+		
+		<p id="result"> 정답: [[ ${z} ]]</p>
+	</form>
+	
+	<script>
+		document.getElementById("clear").addEventListener('click', function() {
+			document.getElementById("x").value ="";
+			document.getElementById("y").value ="";
+			document.getElementById("result").innerHTML = " 정답: ";
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+

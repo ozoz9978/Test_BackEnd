@@ -1,0 +1,28 @@
+package com.kdigital.ajax.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.kdigital.ajax.dto.GuestbookDTO;
+import com.kdigital.ajax.service.GuestbookService;
+
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+
+public class GuestbookController {
+	
+	final GuestbookService service;
+	@GetMapping("/guestbookpage")
+
+	public List<GuestbookDTO> guestbook() {
+		List<GuestbookDTO> list = null;
+		
+		list = service.selectAll();
+		
+		return list;
+	}
+}

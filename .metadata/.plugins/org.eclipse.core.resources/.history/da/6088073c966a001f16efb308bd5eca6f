@@ -1,0 +1,17 @@
+package com.kdigital.ajax.service;
+
+import org.springframework.stereotype.Service;
+
+import com.kdigital.ajax.repository.GuestbookRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class GuestbookService {
+	final GuestbookRepository repository;
+	
+	public List<GuestbookDTO> selectAll(){
+		return null;
+	}
+}
